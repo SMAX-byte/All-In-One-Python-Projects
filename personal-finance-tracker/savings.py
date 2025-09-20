@@ -7,7 +7,7 @@ def set_goal():
     conn = get_connection()
     cursor = conn.cursor()
     
-    cursor.execute("INSERT OR REPLACE INTO savings_goal (id, goal_amount) VALUES (1, ?)", (goal_amount,goal_date))
+    cursor.execute("INSERT OR REPLACE INTO savings_goal (id, goal_amount,goal_date) VALUES (1, ?, ?)", (goal_amount,goal_date))
     conn.commit()
     conn.close()
     
@@ -25,8 +25,8 @@ def track_savings_progress(balance):
         goal_amount = goal_row[0]
         remaining = goal_amount - balance
         if remaining > 0:
-            print(f"You need to save {remaining} more to reach your goal.")
+            print(f"You need to save {remaining} more to reach your goal to reach your goal by {goal_date}.")
         else:
-            print(f"Congratulations! You've reached your savings goal.")
+            print(f"Congratulations! Today,on {goal_date}, you've reached your savings goal.")
     else:
         print("No savings goal set.")
