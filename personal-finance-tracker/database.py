@@ -26,6 +26,7 @@ def initialize_database():
         CREATE TABLE IF NOT EXISTS savings_goal (
             id INTEGER PRIMARY KEY,
             goal_amount REAL NOT NULL
+            goal_date TIMESTAMP NOT NULL
         )
     ''')
 
