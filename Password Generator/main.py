@@ -7,7 +7,7 @@ class App:
         self.window = Tk()
         self.window.title('password_generator')
         self.window.iconbitmap('logo.ico')
-        self.window.iconphoto(False, PhotoImage(file='logo.png'))
+        self.window.iconphoto(False, PhotoImage(file='logo.jpeg'))
         self.window.geometry('500x255')
         self.window.config(bg='gray')
 
