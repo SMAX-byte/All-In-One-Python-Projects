@@ -2,15 +2,16 @@ from database import get_connection
 
 def set_goal():
     goal_amount = float(input("Enter your savings goal: "))
+    goal_date = input("Enter your target date (YYYY-MM-DD): ")
     
     conn = get_connection()
     cursor = conn.cursor()
     
-    cursor.execute("INSERT OR REPLACE INTO savings_goal (id, goal_amount) VALUES (1, ?)", (goal_amount,))
+    cursor.execute("INSERT OR REPLACE INTO savings_goal (id, goal_amount) VALUES (1, ?)", (goal_amount,goal_date))
     conn.commit()
     conn.close()
     
-    print(f"Savings goal of {goal_amount} set successfully!")
+    print(f"Savings goal of {goal_amount} by {goal_date} was set successfully!")
 
 def track_savings_progress(balance):
     conn = get_connection()
