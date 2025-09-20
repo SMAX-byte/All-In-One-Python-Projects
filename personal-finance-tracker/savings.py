@@ -22,7 +22,7 @@ def track_savings_progress(balance):
     conn.close()
     
     if goal_row:
-        goal_amount = goal_row[0]
+        goal_amount, goal_date = goal_row[0]
         remaining = goal_amount - balance
         if remaining > 0:
             print(f"You need to save {remaining} more to reach your goal to reach your goal by {goal_date}.")
