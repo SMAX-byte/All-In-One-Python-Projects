@@ -2,7 +2,7 @@ import sqlite3
 from database import get_connection
 
 def add_income():
-    category = input("Enter income source (e.g., Salary, Freelance): ")
+    category = input("Enter all income sources (e.g., Salary, Freelance): ")
     amount = float(input("Enter amount: "))
     
     conn = get_connection()
